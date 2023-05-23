@@ -6,6 +6,8 @@ import Image from "next/image"
 import ThemeChanger from "./darkSwitch";
 import { Inter } from 'next/font/google'
 import { Disclosure } from "@headlessui/react";
+import Container from "./container";
+import heroImg from "/public/img/main.png";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,7 +47,7 @@ export default function RootLayout({
                             className="w-8"
                           />
                         </span>
-                        <span>헤리메포의 개발 이야기</span>
+                        <span>이응진 개발 이야기</span>
                       </span>
                     </Link>
 
@@ -115,6 +117,62 @@ export default function RootLayout({
             </div>
           </nav>
         </div>
+        {/* 메인페이지 */}
+        <Container className="flex flex-wrap ">
+          <div className="flex items-center w-full lg:w-1/2">
+            <div className="max-w-2xl mb-8">
+              <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
+                안녕하세요<br/>프론트엔드 개발자 이응진<br/>소개 사이트에<br/>오신 것을 환영합니다
+              </h1>
+              <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
+                개발 첫 시작을 졸업 작품으로 시작해서, 취직 후에 다양한 경험을 통해서
+                시각화에 조금 더 흥미를 느끼고 프론트엔드 공부를 열심히 하고 있습니다
+              </p>
+              <p className="py-5 text-xl leading-normal text-red-500 lg:text-xl xl:text-2xl  dark:text-gray-300 underline">
+              개발을 잘하는 사람이 되지는 못하더라도, 꾸준히 개발을 하고 도전을
+                하는 개발자로 남고 싶습니다
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center w-full lg:w-1/2">
+            <div className="">
+              <Image
+                src={heroImg}
+                width="616"
+                height="617"
+                className={"object-cover"}
+                alt="Hero Illustration"
+                loading="eager"
+                placeholder="blur"
+              />
+            </div>
+          </div>
+        </Container>
+        <Container>
+        <div className="flex flex-col justify-center">
+          <div className="text-xl text-center text-gray-700 dark:text-white">
+            About Me
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
+            {/* <div className="pt-2 text-gray-400 dark:text-gray-400">
+              <AmazonLogo />
+            </div>
+            <div className="text-gray-400 dark:text-gray-400">
+              <VerizonLogo />
+            </div>
+            <div className="text-gray-400 dark:text-gray-400">
+              <MicrosoftLogo />
+            </div>
+            <div className="pt-1 text-gray-400 dark:text-gray-400">
+              <NetflixLogo />
+            </div>
+            <div className="pt-2 text-gray-400 dark:text-gray-400">
+              <SonyLogo />
+            </div> */}
+          </div>
+        </div>
+        </Container>
         {children}
       </body>
     </html>
